@@ -4,14 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Echo — A quiet recorder that remembers every meeting.</title>
-    <meta name="description" content="Tap record. Echo transcribes live, extracts the people and action items, and answers questions from your full meeting history.">
+    <meta name="description" content="Tap record. Echo transcribes live in 30+ languages, extracts people and action items, and answers questions from your full meeting history — all on your iPhone.">
     <link rel="canonical" href="https://phillipan14.github.io/echo-site/">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://phillipan14.github.io/echo-site/">
     <meta property="og:title" content="Echo — A quiet recorder that remembers every meeting.">
-    <meta property="og:description" content="Tap record. Echo transcribes live, extracts people and action items, and answers questions from your full meeting history.">
+    <meta property="og:description" content="Live transcription, AI summaries, action items, conference collections, and chat-with-your-meetings — all on-device, on iPhone.">
+    <meta property="og:image" content="https://phillipan14.github.io/echo-site/shots/dashboard.png">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Echo — A quiet recorder that remembers every meeting.">
+    <meta name="twitter:description" content="Live transcription, AI summaries, action items, and chat-with-your-meetings — on iPhone.">
+    <meta name="twitter:image" content="https://phillipan14.github.io/echo-site/shots/dashboard.png">
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -60,37 +64,210 @@
     <section id="features" class="features">
         <div class="container">
             <h2>What Echo does</h2>
+            <p class="features-lede">Six quiet jobs, one app. Each does enough on its own to be a product. Together they turn the months of meetings you'd otherwise forget into something you can actually use.</p>
             <div class="feature-grid">
-                <div class="feature">
-                    <div class="feature-eyebrow">RECORD</div>
-                    <h3>Tap once. Echo listens.</h3>
-                    <p>Lock screen widget, Dynamic Island, Apple Watch, or back-tap your iPhone. Recording survives interruptions, calls, and locked screens.</p>
-                </div>
                 <div class="feature">
                     <div class="feature-eyebrow">TRANSCRIBE</div>
                     <h3>Live transcript, in any language.</h3>
-                    <p>Words appear as people talk. Apple Speech runs locally — your audio never leaves your iPhone. Multilingual mode handles code-switching (English ↔ Mandarin).</p>
+                    <p>Words appear as people talk. Apple Speech runs on-device — audio never leaves your iPhone. Multilingual mode handles code-switching between English and Mandarin in a single recording.</p>
                 </div>
                 <div class="feature">
                     <div class="feature-eyebrow">EXTRACT</div>
-                    <h3>People + action items, automatic.</h3>
-                    <p>The moment you hit End, Echo pulls out who was there, what was decided, and what needs doing — review and accept in one tap.</p>
+                    <h3>People and action items, automatic.</h3>
+                    <p>The moment you hit End, Echo pulls out who was there and what needs doing. Review and accept in one tap — only checked items land in your network.</p>
                 </div>
                 <div class="feature">
-                    <div class="feature-eyebrow">SUMMARIZE</div>
-                    <h3>Notes that read like a magazine.</h3>
-                    <p>Bring your own AI key (Claude or DeepSeek). Echo turns every recording into elegant summaries with key points and timestamps.</p>
+                    <div class="feature-eyebrow">ASK</div>
+                    <h3>Chat with your meetings.</h3>
+                    <p>"What did Bob say about pricing?" Echo answers from the actual transcript — grounded in what was said, not invented. Works in any single meeting and across your full history.</p>
                 </div>
                 <div class="feature">
-                    <div class="feature-eyebrow">REMEMBER</div>
-                    <h3>Ask across every meeting.</h3>
-                    <p>"What did the team say about pricing last quarter?" Echo searches every transcript and answers — pulled straight from the transcript.</p>
+                    <div class="feature-eyebrow">COLLECT</div>
+                    <h3>Conferences and multi-day events.</h3>
+                    <p>Group sessions into a Collection and Echo synthesises across them — themes that emerged, decisions across days, follow-ups due. One view for a three-day summit.</p>
                 </div>
                 <div class="feature">
-                    <div class="feature-eyebrow">ORGANIZE</div>
-                    <h3>Inbox, People, Collections.</h3>
-                    <p>Action items collect in your Inbox across every meeting. People auto-build into a network. Multi-day events synthesize into one view.</p>
+                    <div class="feature-eyebrow">JOURNAL</div>
+                    <h3>Not just meetings — voice memos, events, journals.</h3>
+                    <p>Four recording modes share the same engine. Speak a journal entry on a walk; Echo transcribes it and files it next to the meetings that prompted it.</p>
                 </div>
+                <div class="feature">
+                    <div class="feature-eyebrow">INBOX</div>
+                    <h3>Every action item, one list.</h3>
+                    <p>Tasks from every meeting flow into a single Inbox. Cross-meeting, searchable, with follow-ups separated from to-dos. Open vs Done. Nothing slips.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="feature-dive">
+        <div class="container">
+            <div class="feature-dive-text">
+                <div class="feature-dive-eyebrow">LIVE TRANSCRIPTION</div>
+                <h2>Captions as the room speaks — in 30+ languages, on-device.</h2>
+                <p>Tap once. Echo starts listening, draws a waveform, and writes the transcript line by line as it hears it. Apple Speech runs locally on your iPhone — your audio never leaves the device, even when you turn the screen off.</p>
+                <p>The multilingual picker handles the awkward case nothing else does well: a meeting where speakers switch between English and Mandarin mid-sentence. Echo transcribes both in a single pass.</p>
+                <ul>
+                    <li>Switch language with one tap (EN, 中文, and more)</li>
+                    <li>Live captions, bookmarks, and inline notes while recording</li>
+                    <li>Keeps transcribing with phone locked or on a call</li>
+                </ul>
+            </div>
+            <div class="feature-dive-shot">
+                <img src="shots/listening.png" alt="Echo's listening screen showing the audio waveform and a live transcript reading 'Specific I'm testing 123 please in...' with the English language picker selected.">
+            </div>
+        </div>
+    </section>
+
+    <section class="feature-dive reverse">
+        <div class="container">
+            <div class="feature-dive-text">
+                <div class="feature-dive-eyebrow">EXTRACT — PEOPLE &amp; ACTIONS</div>
+                <h2>People and to-dos, pulled out the moment you stop.</h2>
+                <p>The instant you tap End, Echo reads back the transcript and surfaces what mattered: who was mentioned, who you met, and what was actually agreed. You see a small review screen — everything pre-checked — and you choose what lands in your network.</p>
+                <p>No more "I'll write up the action items later." They're already written. You just confirm.</p>
+                <ul>
+                    <li>People auto-recognised — names, roles, companies</li>
+                    <li>Action items extracted from what was said, not inferred</li>
+                    <li>One tap to add, one tap to skip</li>
+                </ul>
+            </div>
+            <div class="feature-dive-shot">
+                <img src="shots/extractions.png" alt="Review extractions screen: Angelo and Bob detected as new people, with the action item 'Introduce Angelo to Bob' ready to add.">
+            </div>
+        </div>
+    </section>
+
+    <section class="feature-dive">
+        <div class="container">
+            <div class="feature-dive-text">
+                <div class="feature-dive-eyebrow">ASK THIS MEETING</div>
+                <h2>Chat with the transcript, like the meeting is still in the room.</h2>
+                <p>Every recording becomes a small searchable archive of itself. Tap <em>Ask this meeting</em> at the bottom of any note and ask anything — what was decided, what your name was attached to, what the speaker actually said about timelines.</p>
+                <p>Answers are grounded in the transcript, never invented. Bring your own AI key (Claude or DeepSeek) — only the text is sent, never the audio. Most meetings cost less than a cent to query.</p>
+                <ul>
+                    <li>Answers cite the moment in the transcript</li>
+                    <li>Continue the conversation thread across follow-ups</li>
+                    <li>Or ask the same question across every meeting at once</li>
+                </ul>
+            </div>
+            <div class="feature-dive-shot">
+                <img src="shots/ai-answer.png" alt="Ask this meeting view, with the user asking 'What do I do in the meeting?' and Echo answering from the transcript that an audio test was done and Angelo was asked to introduce himself to Bob.">
+            </div>
+        </div>
+    </section>
+
+    <section class="feature-dive reverse">
+        <div class="container">
+            <div class="feature-dive-text">
+                <div class="feature-dive-eyebrow">CONFERENCES &amp; COLLECTIONS</div>
+                <h2>A three-day summit, in one synthesised view.</h2>
+                <p>Group recordings into a Conference and Echo treats the whole event as one thing. A multi-day programme becomes a single page: sessions in order, themes that emerged across days, the follow-ups owed back to other delegates.</p>
+                <p>Built for the kind of week where you do eight talks, four side meetings, and a panel — and lose track of which decision came from which room.</p>
+                <ul>
+                    <li>Date-bounded multi-day collections</li>
+                    <li>Cross-session synthesis (themes, decisions, open threads)</li>
+                    <li>Per-session transcripts and action items still intact</li>
+                </ul>
+            </div>
+            <div class="feature-dive-shot">
+                <img src="shots/conference-detail.png" alt="AI Summit conference page showing 'This conference at a glance' with a cross-session synthesis covering tensions in AI in education, governance discussions, and tech diplomacy themes.">
+            </div>
+        </div>
+    </section>
+
+    <section class="feature-dive">
+        <div class="container">
+            <div class="feature-dive-text">
+                <div class="feature-dive-eyebrow">FOUR RECORDING MODES</div>
+                <h2>Meetings, voice memos, events — and a journal mode for walks.</h2>
+                <p>Echo isn't only for meetings. Before you hit record, pick a type: Meeting, Voice memo, Event, or Journal. The transcript engine is the same; the way Echo files and surfaces the recording is not.</p>
+                <p>Journal mode is the quiet one. Talk for two minutes on the walk home and Echo writes it down for you — searchable, dated, sat next to the meetings that prompted the thought.</p>
+                <ul>
+                    <li>Meeting — people, action items, summary</li>
+                    <li>Voice memo — quick capture, no extractions</li>
+                    <li>Event — bind to a calendar block</li>
+                    <li>Journal — long-form personal notes, transcribed</li>
+                </ul>
+            </div>
+            <div class="feature-dive-shot">
+                <img src="shots/journals.png" alt="Echo's recording type chooser sheet with four options: Meeting, Voice memo, Event, and Journal.">
+            </div>
+        </div>
+    </section>
+
+    <section class="feature-dive reverse">
+        <div class="container">
+            <div class="feature-dive-text">
+                <div class="feature-dive-eyebrow">INBOX</div>
+                <h2>Every action item, one list, across every meeting.</h2>
+                <p>The action items Echo extracts don't get stranded inside individual notes. They collect in your Inbox — a single to-do list spanning every meeting, voice memo, and journal entry.</p>
+                <p>Open and Done split. Follow-ups (things to send other people) separate from your own tasks. Sort by newest, by meeting, by date. Tap any item to jump back to the exact moment in the transcript where it came from.</p>
+                <ul>
+                    <li>Tasks and Follow-ups, separated</li>
+                    <li>Cross-meeting, cross-language (中文 and English share one Inbox)</li>
+                    <li>Each item traces back to the line that produced it</li>
+                </ul>
+            </div>
+            <div class="feature-dive-shot">
+                <img src="shots/inbox.png" alt="Echo Inbox showing tasks across multiple meetings, including a Visa Foundation presentation, R-visa investigation tasks in Chinese, and event monetisation explorations.">
+            </div>
+        </div>
+    </section>
+
+    <section class="feature-dive">
+        <div class="container">
+            <div class="feature-dive-text">
+                <div class="feature-dive-eyebrow">SUMMARIES &amp; KEY POINTS</div>
+                <h2>Notes that read like a magazine, not a wall of text.</h2>
+                <p>Hit End and Echo writes the summary in seconds. Not a literal transcript dump — a clean editorial paragraph plus numbered key points, in the same serif that runs across the rest of the app.</p>
+                <p>Bring your own AI key (Claude or DeepSeek). You pay them directly, pennies per meeting. The transcript itself is what's sent — audio stays on your phone.</p>
+                <ul>
+                    <li>Editorial-style summary + numbered key points</li>
+                    <li>Powered by Claude or DeepSeek (your key, your spend)</li>
+                    <li>Re-run any time the model improves</li>
+                </ul>
+            </div>
+            <div class="feature-dive-shot">
+                <img src="shots/summary.png" alt="A meeting note titled 'Introduction of Angelo to Bob' with hashtag topic chips, an AI-written summary paragraph, and the start of a numbered Key Points list.">
+            </div>
+        </div>
+    </section>
+
+    <section class="feature-dive reverse">
+        <div class="container">
+            <div class="feature-dive-text">
+                <div class="feature-dive-eyebrow">TRANSCRIPT &amp; MARKS</div>
+                <h2>Every word, timestamped — and tap any line to play from it.</h2>
+                <p>The full transcript is always one tap away. Each segment is timestamped, searchable, and lined up with the audio. Drop a bookmark mid-meeting and you can find the exact moment again in a week.</p>
+                <p>This is the source of truth behind every summary, every action item, and every answer Echo gives you.</p>
+                <ul>
+                    <li>Word counts, segment timestamps, full-text search</li>
+                    <li>Play audio from any line</li>
+                    <li>Bookmarks and photo marks taken while recording</li>
+                </ul>
+            </div>
+            <div class="feature-dive-shot">
+                <img src="shots/transcript.png" alt="A meeting transcript view with timestamped lines from 0:00 to 0:23, including 'So ask a very simple question', 'Yeah', 'I'm testing one, two, three, please introduce' and an Ask this meeting button.">
+            </div>
+        </div>
+    </section>
+
+    <section class="feature-dive">
+        <div class="container">
+            <div class="feature-dive-text">
+                <div class="feature-dive-eyebrow">PEOPLE</div>
+                <h2>A network that builds itself, meeting by meeting.</h2>
+                <p>Every person Echo extracts joins your People view. Roles, companies, last-met dates, and the action items still open with each of them — all stitched together without you typing a CRM entry.</p>
+                <p>Optional one-tap sync with iOS Contacts fills in emails, phones, and LinkedIns; Echo dedupes the duplicates so the same person doesn't show up three ways.</p>
+                <ul>
+                    <li>People auto-extracted from what was actually said</li>
+                    <li>Last-met dates and per-person open tasks</li>
+                    <li>Sync with iOS Contacts to fill in details (opt-in)</li>
+                </ul>
+            </div>
+            <div class="feature-dive-shot">
+                <img src="shots/people.png" alt="Echo People tab listing Shima Duffy, Niyi, John, and Philip with their roles, last-met dates, and missing-contact-detail prompts.">
             </div>
         </div>
     </section>
@@ -145,6 +322,14 @@
             <details>
                 <summary>Does Echo work for in-person meetings or just calls?</summary>
                 <p>Both. Echo uses your iPhone's microphone, so it captures any audio your phone can hear — in-person rooms, Zoom on speaker, AirPods, etc.</p>
+            </details>
+            <details>
+                <summary>Can I use Echo just for personal journals?</summary>
+                <p>Yes. Journal is one of four recording modes and skips the people/action-item extraction by default. Speak; Echo transcribes; the entry files itself with a date and lives alongside your meetings (but private).</p>
+            </details>
+            <details>
+                <summary>What's the difference between a Conference and a regular meeting?</summary>
+                <p>Conferences are Collections — multi-day, date-bounded groupings of related recordings. You get one synthesised page across all the sessions: themes, decisions, follow-ups owed. Useful for summits, off-sites, or any week where ten meetings belong to one story.</p>
             </details>
             <details>
                 <summary>Where do my notes live?</summary>

@@ -295,8 +295,16 @@ body {
     font-size: 40px;
     line-height: 1.1;
     color: var(--warm-ink);
-    margin-bottom: 48px;
+    margin-bottom: 16px;
     text-align: left;
+}
+
+.features-lede {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--warm-ink-soft);
+    max-width: 520px;
+    margin-bottom: 48px;
 }
 
 .feature-grid {
@@ -334,6 +342,134 @@ body {
     font-size: 15px;
     color: var(--warm-ink-soft);
     line-height: 1.6;
+}
+
+/* Per-feature deep-dive sections */
+.feature-dive {
+    padding: 72px 0;
+    border-top: 0.5px solid var(--hairline);
+}
+
+.feature-dive .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 36px;
+    align-items: center;
+}
+
+@media (min-width: 720px) {
+    .feature-dive .container {
+        grid-template-columns: 1fr 1fr;
+        gap: 56px;
+    }
+    .feature-dive.reverse .feature-dive-text {
+        order: 2;
+    }
+    .feature-dive.reverse .feature-dive-shot {
+        order: 1;
+    }
+}
+
+.feature-dive-eyebrow {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.6px;
+    color: var(--terracotta);
+    margin-bottom: 14px;
+}
+
+.feature-dive h2 {
+    font-style: italic;
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 1.15;
+    color: var(--warm-ink);
+    margin-bottom: 18px;
+    letter-spacing: -0.005em;
+}
+
+.feature-dive p {
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--warm-ink-soft);
+    margin-bottom: 14px;
+}
+
+.feature-dive ul {
+    list-style: none;
+    padding: 0;
+    margin: 18px 0 0;
+}
+
+.feature-dive ul li {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--warm-ink-soft);
+    padding-left: 18px;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.feature-dive ul li::before {
+    content: "·";
+    color: var(--terracotta);
+    position: absolute;
+    left: 4px;
+    top: -2px;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.feature-dive-shot {
+    display: flex;
+    justify-content: center;
+}
+
+.feature-dive-shot img {
+    width: 100%;
+    max-width: clamp(240px, 70%, 320px);
+    aspect-ratio: 1290 / 2616;
+    object-fit: cover;
+    border-radius: 26px;
+    box-shadow: 0 30px 80px -30px rgba(199, 93, 78, 0.28),
+                0 12px 28px -10px rgba(42, 31, 20, 0.18);
+    background: var(--surface);
+    display: block;
+}
+
+@media (min-width: 720px) {
+    .feature-dive-shot img {
+        max-width: 300px;
+    }
+}
+
+/* Section intro divider (for the features overview) */
+.section-divider {
+    text-align: center;
+    padding: 60px 0 0;
+}
+
+.section-divider .feature-eyebrow {
+    margin-bottom: 14px;
+}
+
+.section-divider h2 {
+    font-style: italic;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 1.1;
+    color: var(--warm-ink);
+    margin-bottom: 16px;
+}
+
+.section-divider p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--warm-ink-soft);
+    max-width: 520px;
+    margin: 0 auto;
 }
 
 /* Privacy section */
