@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Echo — A quiet recorder that remembers every meeting.</title>
+    <meta name="description" content="Tap record. Echo transcribes live, extracts the people and action items, and answers questions from your full meeting history.">
+    <link rel="canonical" href="https://phillipan14.github.io/echo-site/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://phillipan14.github.io/echo-site/">
+    <meta property="og:title" content="Echo — A quiet recorder that remembers every meeting.">
+    <meta property="og:description" content="Tap record. Echo transcribes live, extracts people and action items, and answers questions from your full meeting history.">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="hero">
+        <div class="container">
+            <div class="echo-mark">E</div>
+            <h1 class="wordmark">Echo</h1>
+            <p class="tagline">A quiet recorder that remembers<br>every meeting.</p>
+            <p class="subtitle">Tap record. Echo transcribes live, writes structured notes the second you stop, and answers questions from your full meeting history — all from one iPhone app.</p>
+            <div class="cta-row">
+                <a href="https://apps.apple.com/app/id6766643542" class="cta-primary">Download on App Store</a>
+                <a href="#demo" class="cta-secondary">Watch the demo</a>
+            </div>
+        </div>
+    </main>
+
+    <section id="demo" class="demo-section">
+        <div class="container">
+            <video id="demo-video" class="demo-video" controls preload="metadata" playsinline>
+                <source src="demo-en.mp4" type="video/mp4">
+            </video>
+            <div class="demo-lang" role="group" aria-label="Video language">
+                <button type="button" aria-pressed="true" data-src="demo-en.mp4">English</button>
+                <button type="button" aria-pressed="false" data-src="demo-zh.mp4">中文</button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        (function() {
+            var video = document.getElementById('demo-video');
+            var buttons = document.querySelectorAll('.demo-lang button');
+            buttons.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    buttons.forEach(function(b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+                    var wasPlaying = !video.paused;
+                    video.src = btn.dataset.src;
+                    video.load();
+                    if (wasPlaying) video.play();
+                });
+            });
+        })();
+    </script>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2>What Echo does</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <div class="feature-eyebrow">RECORD</div>
+                    <h3>Tap once. Echo listens.</h3>
+                    <p>Lock screen widget, Dynamic Island, Apple Watch, or back-tap your iPhone. Recording survives interruptions, calls, and locked screens.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-eyebrow">TRANSCRIBE</div>
+                    <h3>Live transcript, in any language.</h3>
+                    <p>Words appear as people talk. Apple Speech runs locally — your audio never leaves your iPhone. Multilingual mode handles code-switching (English ↔ Mandarin).</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-eyebrow">EXTRACT</div>
+                    <h3>People + action items, automatic.</h3>
+                    <p>The moment you hit End, Echo pulls out who was there, what was decided, and what needs doing — review and accept in one tap.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-eyebrow">SUMMARIZE</div>
+                    <h3>Notes that read like a magazine.</h3>
+                    <p>Bring your own AI key (Claude or DeepSeek). Echo turns every recording into elegant summaries with key points and timestamps.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-eyebrow">REMEMBER</div>
+                    <h3>Ask across every meeting.</h3>
+                    <p>"What did the team say about pricing last quarter?" Echo searches every transcript and answers — pulled straight from the transcript.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-eyebrow">ORGANIZE</div>
+                    <h3>Inbox, People, Collections.</h3>
+                    <p>Action items collect in your Inbox across every meeting. People auto-build into a network. Multi-day events synthesize into one view.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how">
+        <div class="container">
+            <h2>Two taps. Then forget it's running.</h2>
+            <div class="how-steps">
+                <div class="how-step">
+                    <div class="how-num">1</div>
+                    <h3>Tap record</h3>
+                    <p>Open Echo, pick a type (Meeting · Voice memo · Event · Journal), and tap the mic. Or set up Back Tap for a one-tap shortcut.</p>
+                </div>
+                <div class="how-step">
+                    <div class="how-num">2</div>
+                    <h3>Echo listens — phone locked or not</h3>
+                    <p>Live transcript builds in real time. Bookmark moments, jot anything alongside. Recording survives interruptions and locked screens.</p>
+                </div>
+                <div class="how-step">
+                    <div class="how-num">3</div>
+                    <h3>Hit End. Notes appear.</h3>
+                    <p>Echo writes a clean AI summary in seconds. Review extracted people and action items, pick what to keep, and it's all timestamped, searchable, and ready.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="privacy">
+        <div class="container">
+            <div class="feature-eyebrow">PRIVACY BY DESIGN</div>
+            <h2>Your meetings stay yours.</h2>
+            <p>Echo has no server. No account. No analytics. No third-party trackers. Audio recordings live in your iPhone's local storage. Transcripts stored in SwiftData on your device. AI features are opt-in — when you add your own API key, only the transcript text is sent, never the recording.</p>
+            <p class="aside"><a href="privacy.html">Privacy policy</a> · <a href="terms.html">Terms of service</a></p>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <h2>Questions</h2>
+            <details>
+                <summary>Is Echo free?</summary>
+                <p>The app itself is free. AI features (summaries, the Ask-this-meeting chat) use your own API key from Claude or DeepSeek — you pay them directly, typically pennies per meeting. No subscription to Echo.</p>
+            </details>
+            <details>
+                <summary>Does Echo work with phone locked?</summary>
+                <p>Yes. Echo keeps transcribing even when you lock your phone or switch to another app. The recording survives interruptions like phone calls.</p>
+            </details>
+            <details>
+                <summary>What languages does transcription support?</summary>
+                <p>30+ languages via Apple Speech, on-device. Multilingual mode is built for code-switching speakers (e.g. an English-Mandarin meeting transcribes both languages in one pass).</p>
+            </details>
+            <details>
+                <summary>Does Echo work for in-person meetings or just calls?</summary>
+                <p>Both. Echo uses your iPhone's microphone, so it captures any audio your phone can hear — in-person rooms, Zoom on speaker, AirPods, etc.</p>
+            </details>
+            <details>
+                <summary>Where do my notes live?</summary>
+                <p>On your iPhone, in SwiftData. iCloud Backup catches them like any iPhone app. No server, no account — your meetings never leave your device unless you choose to send the transcript text to an AI provider for summary.</p>
+            </details>
+            <details>
+                <summary>Who's behind Echo?</summary>
+                <p>One person — Phillip An, a Schwarzman Scholar at Tsinghua University. Built solo because every meeting in Beijing was a translation problem with no good memory tool to match.</p>
+            </details>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Echo · Made with care · <a href="mailto:phillipan14@gmail.com">phillipan14@gmail.com</a></p>
+        </div>
+    </footer>
+</body>
+</html>

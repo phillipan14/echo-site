@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — Echo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <article class="doc-page">
+        <a href="index.html" class="home-link">← Echo</a>
+        <h1>Privacy Policy</h1>
+        <p class="updated">Last updated: May 4, 2026</p>
+
+        <p>This Privacy Policy describes how Echo ("we", "our", or "us") handles your data. We built Echo with privacy as a first principle. This policy explains what that means in practice.</p>
+
+        <div class="tldr">
+            <h3>TL;DR</h3>
+            <ul>
+                <li><strong>Audio recordings stay on your iPhone.</strong> They are never uploaded to our servers.</li>
+                <li><strong>Transcription is on-device</strong> by default, using Apple's Speech framework.</li>
+                <li><strong>AI features are opt-in.</strong> When you add your own API key (Anthropic, DeepSeek, Deepgram), only the transcript or text — never the audio file — is sent to your chosen provider, and only when you explicitly request a summary or chat.</li>
+                <li><strong>No analytics. No tracking. No third-party SDKs phoning home.</strong></li>
+                <li><strong>You own your data.</strong> Export anytime. Delete anytime.</li>
+            </ul>
+        </div>
+
+        <h2>What we collect</h2>
+
+        <h3>Stored locally on your iPhone</h3>
+        <ul>
+            <li>Audio recordings you create</li>
+            <li>Transcripts generated from those recordings</li>
+            <li>Photos you capture during recording</li>
+            <li>AI-generated summaries, key points, decisions, and action items</li>
+            <li>People and companies extracted from transcripts</li>
+            <li>Optional: city/region tag (only if you enable location tagging in Settings)</li>
+            <li>Optional: calendar event titles you've matched to recordings</li>
+        </ul>
+
+        <h3>Sent to third parties (only with your explicit configuration)</h3>
+        <p>When you enter an API key in Settings:</p>
+        <ul>
+            <li><strong>Anthropic (Claude)</strong> — receives meeting transcripts (text only, never audio) when you generate a summary, draft a follow-up, or ask Echo a question. <a href="https://www.anthropic.com/legal/privacy">Their privacy policy</a>.</li>
+            <li><strong>DeepSeek</strong> — same as above if you choose DeepSeek as your provider. <a href="https://platform.deepseek.com/privacy">Their privacy policy</a>.</li>
+            <li><strong>Deepgram</strong> — receives audio files when you enable Deepgram-based speaker diarization. <a href="https://deepgram.com/privacy">Their privacy policy</a>.</li>
+        </ul>
+        <p>You can remove any API key at any time in Settings → AI. Once removed, Echo stops sending data to that provider.</p>
+
+        <h3>Sent to us</h3>
+        <p><strong>Nothing.</strong> Echo does not have a server backend. We never receive your recordings, transcripts, or any usage data.</p>
+
+        <h2>Optional integrations (read-only)</h2>
+        <p>If you grant permission, Echo reads (never writes) from the following on your device:</p>
+        <ul>
+            <li><strong>Microphone</strong> — to record audio. Required for the core function.</li>
+            <li><strong>Speech Recognition</strong> — to transcribe audio on-device.</li>
+            <li><strong>Calendar</strong> — to suggest meeting titles and notify you before scheduled events.</li>
+            <li><strong>Contacts</strong> — to fill in email/phone for people Echo has extracted from your transcripts.</li>
+            <li><strong>Location (when in use)</strong> — to tag the city of a recording if you enable it.</li>
+            <li><strong>Notifications</strong> — to alert you before upcoming meetings or when a call starts.</li>
+        </ul>
+        <p>You can revoke any of these in iOS Settings → Echo at any time. Echo continues to function with reduced capability when permissions are denied.</p>
+
+        <h2>What we do not do</h2>
+        <ul>
+            <li>We do not collect analytics, telemetry, or usage data.</li>
+            <li>We do not use third-party tracking SDKs.</li>
+            <li>We do not sell, share, or monetize your data.</li>
+            <li>We do not have an account system. There is no Echo account to sign up for.</li>
+            <li>We do not advertise. There are no ads in Echo, ever.</li>
+        </ul>
+
+        <h2>Crash reporting (Sentry, optional)</h2>
+        <p>Echo includes optional crash reporting via Sentry. By default, this is <strong>disabled</strong>. If you choose to enable it (in development builds, or by entering a Sentry DSN), only anonymous crash reports — never your recordings, transcripts, or personal data — are sent to a Sentry account that <em>you</em> configure. We do not run a shared Sentry instance.</p>
+
+        <h2>Two-party consent</h2>
+        <p>Recording laws vary by jurisdiction. Eleven U.S. states require all parties to a conversation to consent before it is recorded. Many countries have similar laws. <strong>You — not Echo — are responsible for compliance with applicable recording laws in your jurisdiction.</strong> Echo prompts you to disclose recording before your first session. We strongly recommend you disclose recording to all participants regardless of legal requirement.</p>
+
+        <h2>Children</h2>
+        <p>Echo is not directed to children under 13. We do not knowingly collect data from children under 13.</p>
+
+        <h2>Changes to this policy</h2>
+        <p>We may update this policy. Material changes will be reflected in an updated "Last updated" date. Because Echo has no account system, we cannot notify you directly — please check back.</p>
+
+        <h2>Contact</h2>
+        <p>Privacy questions: <a href="mailto:phillipan14@gmail.com">phillipan14@gmail.com</a></p>
+
+        <p style="font-style: italic; margin-top: 36px;">This policy is short on purpose. Privacy claims should be auditable. If anything here surprises you, the source code answers it: Echo is built to do exactly what this document says, and nothing more.</p>
+    </article>
+</body>
+</html>
