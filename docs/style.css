@@ -94,9 +94,9 @@ main, section, footer {
 
 /* ───────────── HERO ───────────── */
 .hero {
-    padding: 120px 0 120px;
+    padding: 96px 0;
     text-align: center;
-    min-height: 88vh;
+    min-height: 72vh;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -182,11 +182,11 @@ main, section, footer {
 
 /* ───────────── MOMENTS INTRO ───────────── */
 .moments {
-    min-height: 80vh;
+    min-height: 50vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 120px 0;
+    padding: 80px 0;
     border-top: 0.5px solid var(--hairline);
     text-align: center;
 }
@@ -220,7 +220,7 @@ main, section, footer {
 
 /* ───────────── DEMO ───────────── */
 .demo-section {
-    padding: 120px 0;
+    padding: 96px 0;
     border-top: 0.5px solid var(--hairline);
     text-align: center;
     overflow: hidden; /* contain the bleed glow */
@@ -298,7 +298,7 @@ main, section, footer {
 
 /* ───────────── STAGE (hero features) — shared bits ───────────── */
 .stage {
-    padding: 120px 0;
+    padding: 96px 0;
     border-top: 0.5px solid var(--hairline);
     position: relative;
 }
@@ -429,7 +429,7 @@ main, section, footer {
 /* ───────────── STAGE 2 — BLEED (Extract) ───────────── */
 .stage-bleed {
     overflow: hidden;
-    padding: 120px 0;
+    padding: 96px 0;
 }
 
 .stage-bleed-grid {
@@ -736,7 +736,7 @@ main, section, footer {
 
 /* ───────────── MOSAIC (5 secondary features) ───────────── */
 .mosaic {
-    padding: 120px 0;
+    padding: 96px 0;
     border-top: 0.5px solid var(--hairline);
 }
 
@@ -780,6 +780,22 @@ main, section, footer {
     .mosaic-grid-2 .tile-thumb { aspect-ratio: 16 / 10; margin: -28px -28px 22px; }
     .mosaic-grid-2 .tile-title { font-size: 22px; }
     .mosaic-grid-2 .tile-body { font-size: 15.5px; }
+
+    /* 4-tile variant — Library 2x2 */
+    .mosaic-grid-4 {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 32px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+    .mosaic-grid-4 .tile { padding: 26px 26px 30px; }
+    .mosaic-grid-4 .tile-thumb { aspect-ratio: 16 / 11; margin: -26px -26px 20px; }
+    .mosaic-grid-4 .tile-title { font-size: 21px; }
+    .mosaic-grid-4 .tile-body { font-size: 15px; }
+}
+
+@media (max-width: 719px) {
+    .mosaic-grid-4 { gap: 22px; }
 }
 
 .tile {
@@ -845,7 +861,7 @@ main, section, footer {
 
 /* ───────────── HOW IT WORKS ───────────── */
 .how {
-    padding: 120px 0;
+    padding: 96px 0;
     border-top: 0.5px solid var(--hairline);
 }
 
@@ -924,7 +940,7 @@ main, section, footer {
 
 /* ───────────── FAQ ───────────── */
 .faq {
-    padding: 120px 0;
+    padding: 96px 0;
     border-top: 0.5px solid var(--hairline);
 }
 
@@ -993,7 +1009,7 @@ main, section, footer {
 
 /* ───────────── PRIVACY ───────────── */
 .privacy {
-    padding: 120px 0;
+    padding: 96px 0;
     border-top: 0.5px solid var(--hairline);
 }
 
@@ -1053,7 +1069,7 @@ footer a:hover { color: var(--warm-ink-soft); }
 
 /* ───────────── DOC PAGES ───────────── */
 .doc-page {
-    padding: 80px 0 80px;
+    padding: 64px 0;
     max-width: 680px;
     margin: 0 auto;
     padding-left: 24px;
@@ -1164,16 +1180,16 @@ footer a:hover { color: var(--warm-ink-soft); }
 /* ───────────── MOBILE TUNING ───────────── */
 @media (max-width: 720px) {
     .hero { padding: 96px 0; min-height: 80vh; }
-    .stage { padding: 80px 0; }
-    .stage-bleed { padding: 80px 0; }
+    .stage { padding: 64px 0; }
+    .stage-bleed { padding: 64px 0; }
     .stage-quiet { padding: 72px 0; }
-    .demo-section { padding: 80px 0; }
-    .library-intro { padding: 80px 0 40px; }
-    .mosaic { padding: 80px 0; }
-    .how { padding: 80px 0; }
-    .faq { padding: 80px 0; }
-    .privacy { padding: 80px 0; }
-    .moments { min-height: 60vh; padding: 80px 0; }
+    .demo-section { padding: 64px 0; }
+    .library-intro { padding: 64px 0 32px; }
+    .mosaic { padding: 64px 0; }
+    .how { padding: 64px 0; }
+    .faq { padding: 64px 0; }
+    .privacy { padding: 64px 0; }
+    .moments { min-height: 60vh; padding: 64px 0; }
 
     .stage-bleed-grid { padding-left: 24px; padding-right: 24px; }
     .stage-bleed-shot { margin-right: 0; justify-content: center; }
