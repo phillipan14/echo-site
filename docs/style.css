@@ -347,7 +347,7 @@ main, section, footer {
 .twin-shot img,
 .scrub-phone img {
     width: 100%;
-    aspect-ratio: 1290 / 2616;
+    aspect-ratio: 1290 / 2796;
     object-fit: cover;
     border-radius: 32px;
     box-shadow:
@@ -499,6 +499,79 @@ main, section, footer {
     filter: blur(8px);
 }
 
+/* ───────────── LIBRARY GROUP ─────────────
+   Library intro + the five tabs (People, Inbox, Photos, Journals, Collections).
+   Visually anchored as one chapter via the intro band. */
+.library-intro {
+    padding: 96px 0 56px;
+    text-align: center;
+    border-top: 0.5px solid var(--hairline);
+}
+
+.library-eyebrow {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2.4px;
+    color: var(--terracotta);
+    margin-bottom: 20px;
+}
+
+.library-h2 {
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(36px, 5.4vw, 64px);
+    line-height: 1.08;
+    color: var(--warm-ink);
+    letter-spacing: -0.018em;
+    margin-bottom: 20px;
+}
+
+.library-h2 em {
+    color: var(--terracotta);
+    font-style: italic;
+}
+
+.library-sub {
+    max-width: 560px;
+    margin: 0 auto;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--warm-ink-soft);
+}
+
+/* Bleed-reverse: phone on the LEFT, text on the RIGHT (mirrors stage-bleed) */
+@media (min-width: 860px) {
+    .stage-bleed-reverse .stage-bleed-grid {
+        grid-template-columns: 1fr 1.05fr;
+        padding-left: 0;
+        padding-right: max(48px, calc((100vw - 1280px) / 2 + 48px));
+    }
+    .stage-bleed-reverse .stage-bleed-shot {
+        order: -1;
+        margin-right: 0;
+        margin-left: -20%;
+        justify-content: flex-start;
+    }
+    .stage-bleed-reverse .stage-bleed-text {
+        padding-right: 0;
+        padding-left: 24px;
+    }
+    .stage-bleed-reverse .stage-bleed-shot::before {
+        left: auto;
+        right: 30%;
+    }
+}
+
+/* Quiet variant — smaller phone, more breath. Used by Journals. */
+.stage-quiet {
+    padding: 100px 0;
+}
+
+.stage-phone-small img {
+    max-width: clamp(220px, 26vw, 280px);
+}
+
 /* ───────────── STAGE 4 — SCRUB (Conferences) ───────────── */
 .stage-scrub {
     /* tall section so the scrub has scroll room */
@@ -507,7 +580,7 @@ main, section, footer {
 
 .scrub-container {
     position: relative;
-    min-height: 220vh;
+    min-height: 280vh; /* extra room — 4 panels now (Collections root + 3 detail) */
     max-width: 1200px;
     margin: 0 auto;
     padding: 80px 24px 80px;
@@ -567,7 +640,7 @@ main, section, footer {
     display: flex;
     justify-content: center;
     width: 100%;
-    aspect-ratio: 1290 / 2616;
+    aspect-ratio: 1290 / 2796;
     max-width: 360px;
     margin: 0 auto;
 }
@@ -591,7 +664,7 @@ main, section, footer {
     inset: 0;
     width: 100%;
     height: 100%;
-    aspect-ratio: 1290 / 2616;
+    aspect-ratio: 1290 / 2796;
     object-fit: cover;
     border-radius: 32px;
     box-shadow:
@@ -645,6 +718,18 @@ main, section, footer {
     /* second row centered (2 of 5) */
     .mosaic-grid .tile:nth-child(4) { grid-column: 1 / span 1; }
     .mosaic-grid .tile:nth-child(5) { grid-column: 2 / span 1; }
+
+    /* 2-tile variant — larger, paired side by side */
+    .mosaic-grid-2 {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 40px;
+        max-width: 920px;
+        margin: 0 auto;
+    }
+    .mosaic-grid-2 .tile { padding: 28px 28px 32px; }
+    .mosaic-grid-2 .tile-thumb { aspect-ratio: 16 / 10; margin: -28px -28px 22px; }
+    .mosaic-grid-2 .tile-title { font-size: 22px; }
+    .mosaic-grid-2 .tile-body { font-size: 15.5px; }
 }
 
 .tile {
