@@ -22,23 +22,25 @@
 <body>
     <main class="hero">
         <div class="container">
-            <div class="echo-mark">E</div>
-            <h1 class="wordmark">Echo</h1>
-            <p class="tagline">A quiet recorder that remembers<br>every meeting.</p>
-            <p class="subtitle">Tap record. Echo transcribes live, writes structured notes the second you stop, and answers questions from your full meeting history — all from one iPhone app.</p>
-            <div class="cta-row">
-                <a href="https://apps.apple.com/app/id6766643542" class="cta-primary">Download on App Store</a>
-                <a href="#demo" class="cta-secondary">Watch the demo</a>
+            <div class="hero-inner">
+                <div class="echo-mark reveal">E</div>
+                <h1 class="wordmark reveal reveal-delay-1">Echo</h1>
+                <p class="tagline reveal reveal-delay-2">A quiet recorder that remembers<br>every meeting.</p>
+                <p class="subtitle reveal reveal-delay-3">Tap record. Echo transcribes live, writes structured notes the second you stop, and answers questions from your full meeting history — all from one iPhone app.</p>
+                <div class="cta-row reveal reveal-delay-4">
+                    <a href="https://apps.apple.com/app/id6766643542" class="cta-primary">Download on App Store</a>
+                    <a href="#demo" class="cta-secondary">Watch the demo</a>
+                </div>
             </div>
         </div>
     </main>
 
     <section id="demo" class="demo-section">
         <div class="container">
-            <video id="demo-video" class="demo-video" controls preload="metadata" playsinline>
+            <video id="demo-video" class="demo-video reveal" controls preload="metadata" playsinline>
                 <source src="demo-en.mp4" type="video/mp4">
             </video>
-            <div class="demo-lang" role="group" aria-label="Video language">
+            <div class="demo-lang reveal reveal-delay-1" role="group" aria-label="Video language">
                 <button type="button" aria-pressed="true" data-src="demo-en.mp4">English</button>
                 <button type="button" aria-pressed="false" data-src="demo-zh.mp4">中文</button>
             </div>
@@ -63,35 +65,35 @@
 
     <section id="features" class="features">
         <div class="container">
-            <h2>What Echo does</h2>
-            <p class="features-lede">Six quiet jobs, one app. Each does enough on its own to be a product. Together they turn the months of meetings you'd otherwise forget into something you can actually use.</p>
+            <h2 class="reveal">What Echo does</h2>
+            <p class="features-lede reveal reveal-delay-1">Six quiet jobs, one app. Each does enough on its own to be a product. Together they turn the months of meetings you'd otherwise forget into something you can actually use.</p>
             <div class="feature-grid">
-                <div class="feature">
+                <div class="feature reveal">
                     <div class="feature-eyebrow">TRANSCRIBE</div>
                     <h3>Live transcript, in any language.</h3>
                     <p>Words appear as people talk. Apple Speech runs on-device — audio never leaves your iPhone. Multilingual mode handles code-switching between English and Mandarin in a single recording.</p>
                 </div>
-                <div class="feature">
+                <div class="feature reveal reveal-delay-1">
                     <div class="feature-eyebrow">EXTRACT</div>
                     <h3>People and action items, automatic.</h3>
                     <p>The moment you hit End, Echo pulls out who was there and what needs doing. Review and accept in one tap — only checked items land in your network.</p>
                 </div>
-                <div class="feature">
+                <div class="feature reveal reveal-delay-2">
                     <div class="feature-eyebrow">ASK</div>
                     <h3>Chat with your meetings.</h3>
                     <p>"What did Bob say about pricing?" Echo answers from the actual transcript — grounded in what was said, not invented. Works in any single meeting and across your full history.</p>
                 </div>
-                <div class="feature">
+                <div class="feature reveal reveal-delay-3">
                     <div class="feature-eyebrow">COLLECT</div>
                     <h3>Conferences and multi-day events.</h3>
                     <p>Group sessions into a Collection and Echo synthesises across them — themes that emerged, decisions across days, follow-ups due. One view for a three-day summit.</p>
                 </div>
-                <div class="feature">
+                <div class="feature reveal reveal-delay-2">
                     <div class="feature-eyebrow">JOURNAL</div>
                     <h3>Not just meetings — voice memos, events, journals.</h3>
                     <p>Four recording modes share the same engine. Speak a journal entry on a walk; Echo transcribes it and files it next to the meetings that prompted it.</p>
                 </div>
-                <div class="feature">
+                <div class="feature reveal reveal-delay-3">
                     <div class="feature-eyebrow">INBOX</div>
                     <h3>Every action item, one list.</h3>
                     <p>Tasks from every meeting flow into a single Inbox. Cross-meeting, searchable, with follow-ups separated from to-dos. Open vs Done. Nothing slips.</p>
@@ -102,7 +104,7 @@
 
     <section class="feature-dive">
         <div class="container">
-            <div class="feature-dive-text">
+            <div class="feature-dive-text reveal">
                 <div class="feature-dive-eyebrow">LIVE TRANSCRIPTION</div>
                 <h2>Captions as the room speaks — in 30+ languages, on-device.</h2>
                 <p>Tap once. Echo starts listening, draws a waveform, and writes the transcript line by line as it hears it. Apple Speech runs locally on your iPhone — your audio never leaves the device, even when you turn the screen off.</p>
@@ -113,7 +115,7 @@
                     <li>Keeps transcribing with phone locked or on a call</li>
                 </ul>
             </div>
-            <div class="feature-dive-shot">
+            <div class="feature-dive-shot reveal reveal-delay-1">
                 <img src="shots/listening.png" alt="Echo's listening screen showing the audio waveform and a live transcript reading 'Specific I'm testing 123 please in...' with the English language picker selected.">
             </div>
         </div>
@@ -121,7 +123,7 @@
 
     <section class="feature-dive reverse">
         <div class="container">
-            <div class="feature-dive-text">
+            <div class="feature-dive-text reveal">
                 <div class="feature-dive-eyebrow">EXTRACT — PEOPLE &amp; ACTIONS</div>
                 <h2>People and to-dos, pulled out the moment you stop.</h2>
                 <p>The instant you tap End, Echo reads back the transcript and surfaces what mattered: who was mentioned, who you met, and what was actually agreed. You see a small review screen — everything pre-checked — and you choose what lands in your network.</p>
@@ -132,7 +134,7 @@
                     <li>One tap to add, one tap to skip</li>
                 </ul>
             </div>
-            <div class="feature-dive-shot">
+            <div class="feature-dive-shot reveal reveal-delay-1">
                 <img src="shots/extractions.png" alt="Review extractions screen: Angelo and Bob detected as new people, with the action item 'Introduce Angelo to Bob' ready to add.">
             </div>
         </div>
@@ -140,7 +142,7 @@
 
     <section class="feature-dive">
         <div class="container">
-            <div class="feature-dive-text">
+            <div class="feature-dive-text reveal">
                 <div class="feature-dive-eyebrow">ASK THIS MEETING</div>
                 <h2>Chat with the transcript, like the meeting is still in the room.</h2>
                 <p>Every recording becomes a small searchable archive of itself. Tap <em>Ask this meeting</em> at the bottom of any note and ask anything — what was decided, what your name was attached to, what the speaker actually said about timelines.</p>
@@ -151,7 +153,7 @@
                     <li>Or ask the same question across every meeting at once</li>
                 </ul>
             </div>
-            <div class="feature-dive-shot">
+            <div class="feature-dive-shot reveal reveal-delay-1">
                 <img src="shots/ai-answer.png" alt="Ask this meeting view, with the user asking 'What do I do in the meeting?' and Echo answering from the transcript that an audio test was done and Angelo was asked to introduce himself to Bob.">
             </div>
         </div>
@@ -159,7 +161,7 @@
 
     <section class="feature-dive reverse">
         <div class="container">
-            <div class="feature-dive-text">
+            <div class="feature-dive-text reveal">
                 <div class="feature-dive-eyebrow">CONFERENCES &amp; COLLECTIONS</div>
                 <h2>A three-day summit, in one synthesised view.</h2>
                 <p>Group recordings into a Conference and Echo treats the whole event as one thing. A multi-day programme becomes a single page: sessions in order, themes that emerged across days, the follow-ups owed back to other delegates.</p>
@@ -170,7 +172,7 @@
                     <li>Per-session transcripts and action items still intact</li>
                 </ul>
             </div>
-            <div class="feature-dive-shot">
+            <div class="feature-dive-shot reveal reveal-delay-1">
                 <img src="shots/conference-detail.png" alt="AI Summit conference page showing 'This conference at a glance' with a cross-session synthesis covering tensions in AI in education, governance discussions, and tech diplomacy themes.">
             </div>
         </div>
@@ -178,7 +180,7 @@
 
     <section class="feature-dive">
         <div class="container">
-            <div class="feature-dive-text">
+            <div class="feature-dive-text reveal">
                 <div class="feature-dive-eyebrow">FOUR RECORDING MODES</div>
                 <h2>Meetings, voice memos, events — and a journal mode for walks.</h2>
                 <p>Echo isn't only for meetings. Before you hit record, pick a type: Meeting, Voice memo, Event, or Journal. The transcript engine is the same; the way Echo files and surfaces the recording is not.</p>
@@ -190,7 +192,7 @@
                     <li>Journal — long-form personal notes, transcribed</li>
                 </ul>
             </div>
-            <div class="feature-dive-shot">
+            <div class="feature-dive-shot reveal reveal-delay-1">
                 <img src="shots/journals.png" alt="Echo's recording type chooser sheet with four options: Meeting, Voice memo, Event, and Journal.">
             </div>
         </div>
@@ -198,7 +200,7 @@
 
     <section class="feature-dive reverse">
         <div class="container">
-            <div class="feature-dive-text">
+            <div class="feature-dive-text reveal">
                 <div class="feature-dive-eyebrow">INBOX</div>
                 <h2>Every action item, one list, across every meeting.</h2>
                 <p>The action items Echo extracts don't get stranded inside individual notes. They collect in your Inbox — a single to-do list spanning every meeting, voice memo, and journal entry.</p>
@@ -209,7 +211,7 @@
                     <li>Each item traces back to the line that produced it</li>
                 </ul>
             </div>
-            <div class="feature-dive-shot">
+            <div class="feature-dive-shot reveal reveal-delay-1">
                 <img src="shots/inbox.png" alt="Echo Inbox showing tasks across multiple meetings, including a Visa Foundation presentation, R-visa investigation tasks in Chinese, and event monetisation explorations.">
             </div>
         </div>
@@ -217,7 +219,7 @@
 
     <section class="feature-dive">
         <div class="container">
-            <div class="feature-dive-text">
+            <div class="feature-dive-text reveal">
                 <div class="feature-dive-eyebrow">SUMMARIES &amp; KEY POINTS</div>
                 <h2>Notes that read like a magazine, not a wall of text.</h2>
                 <p>Hit End and Echo writes the summary in seconds. Not a literal transcript dump — a clean editorial paragraph plus numbered key points, in the same serif that runs across the rest of the app.</p>
@@ -228,7 +230,7 @@
                     <li>Re-run any time the model improves</li>
                 </ul>
             </div>
-            <div class="feature-dive-shot">
+            <div class="feature-dive-shot reveal reveal-delay-1">
                 <img src="shots/summary.png" alt="A meeting note titled 'Introduction of Angelo to Bob' with hashtag topic chips, an AI-written summary paragraph, and the start of a numbered Key Points list.">
             </div>
         </div>
@@ -236,7 +238,7 @@
 
     <section class="feature-dive reverse">
         <div class="container">
-            <div class="feature-dive-text">
+            <div class="feature-dive-text reveal">
                 <div class="feature-dive-eyebrow">TRANSCRIPT &amp; MARKS</div>
                 <h2>Every word, timestamped — and tap any line to play from it.</h2>
                 <p>The full transcript is always one tap away. Each segment is timestamped, searchable, and lined up with the audio. Drop a bookmark mid-meeting and you can find the exact moment again in a week.</p>
@@ -247,7 +249,7 @@
                     <li>Bookmarks and photo marks taken while recording</li>
                 </ul>
             </div>
-            <div class="feature-dive-shot">
+            <div class="feature-dive-shot reveal reveal-delay-1">
                 <img src="shots/transcript.png" alt="A meeting transcript view with timestamped lines from 0:00 to 0:23, including 'So ask a very simple question', 'Yeah', 'I'm testing one, two, three, please introduce' and an Ask this meeting button.">
             </div>
         </div>
@@ -255,7 +257,7 @@
 
     <section class="feature-dive">
         <div class="container">
-            <div class="feature-dive-text">
+            <div class="feature-dive-text reveal">
                 <div class="feature-dive-eyebrow">PEOPLE</div>
                 <h2>A network that builds itself, meeting by meeting.</h2>
                 <p>Every person Echo extracts joins your People view. Roles, companies, last-met dates, and the action items still open with each of them — all stitched together without you typing a CRM entry.</p>
@@ -266,7 +268,7 @@
                     <li>Sync with iOS Contacts to fill in details (opt-in)</li>
                 </ul>
             </div>
-            <div class="feature-dive-shot">
+            <div class="feature-dive-shot reveal reveal-delay-1">
                 <img src="shots/people.png" alt="Echo People tab listing Shima Duffy, Niyi, John, and Philip with their roles, last-met dates, and missing-contact-detail prompts.">
             </div>
         </div>
@@ -274,19 +276,19 @@
 
     <section class="how">
         <div class="container">
-            <h2>Two taps. Then forget it's running.</h2>
+            <h2 class="reveal">Two taps. Then forget it's running.</h2>
             <div class="how-steps">
-                <div class="how-step">
+                <div class="how-step reveal">
                     <div class="how-num">1</div>
                     <h3>Tap record</h3>
                     <p>Open Echo, pick a type (Meeting · Voice memo · Event · Journal), and tap the mic. Or set up Back Tap for a one-tap shortcut.</p>
                 </div>
-                <div class="how-step">
+                <div class="how-step reveal reveal-delay-1">
                     <div class="how-num">2</div>
                     <h3>Echo listens — phone locked or not</h3>
                     <p>Live transcript builds in real time. Bookmark moments, jot anything alongside. Recording survives interruptions and locked screens.</p>
                 </div>
-                <div class="how-step">
+                <div class="how-step reveal reveal-delay-2">
                     <div class="how-num">3</div>
                     <h3>Hit End. Notes appear.</h3>
                     <p>Echo writes a clean AI summary in seconds. Review extracted people and action items, pick what to keep, and it's all timestamped, searchable, and ready.</p>
@@ -297,16 +299,16 @@
 
     <section class="privacy">
         <div class="container">
-            <div class="feature-eyebrow">PRIVACY BY DESIGN</div>
-            <h2>Your meetings stay yours.</h2>
-            <p>Echo has no server. No account. No analytics. No third-party trackers. Audio recordings live in your iPhone's local storage. Transcripts stored in SwiftData on your device. AI features are opt-in — when you add your own API key, only the transcript text is sent, never the recording.</p>
-            <p class="aside"><a href="privacy.html">Privacy policy</a> · <a href="terms.html">Terms of service</a></p>
+            <div class="feature-eyebrow reveal">PRIVACY BY DESIGN</div>
+            <h2 class="reveal reveal-delay-1">Your meetings stay yours.</h2>
+            <p class="reveal reveal-delay-2">Echo has no server. No account. No analytics. No third-party trackers. Audio recordings live in your iPhone's local storage. Transcripts stored in SwiftData on your device. AI features are opt-in — when you add your own API key, only the transcript text is sent, never the recording.</p>
+            <p class="aside reveal reveal-delay-3"><a href="privacy.html">Privacy policy</a> · <a href="terms.html">Terms of service</a></p>
         </div>
     </section>
 
     <section class="faq">
         <div class="container">
-            <h2>Questions</h2>
+            <h2 class="reveal">Questions</h2>
             <details>
                 <summary>Is Echo free?</summary>
                 <p>The app itself is free. AI features (summaries, the Ask-this-meeting chat) use your own API key from Claude or DeepSeek — you pay them directly, typically pennies per meeting. No subscription to Echo.</p>
@@ -347,5 +349,52 @@
             <p>Echo · Made with care · <a href="mailto:phillipan14@gmail.com">phillipan14@gmail.com</a></p>
         </div>
     </footer>
+
+    <script>
+        (function() {
+            var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reduced) return;
+
+            // 1) Reveal-on-scroll: fade + lift as sections enter the viewport
+            if ('IntersectionObserver' in window) {
+                var io = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('in-view');
+                            io.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+                document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
+            } else {
+                document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('in-view'); });
+            }
+
+            // 2) Hero parallax: subtle lift + fade of hero contents as you scroll past
+            var hero = document.querySelector('.hero-inner');
+            var isMobile = window.matchMedia('(max-width: 720px)').matches;
+            if (hero) {
+                var intensity = isMobile ? 0.15 : 0.35;
+                var ticking = false;
+                var onScroll = function() {
+                    if (ticking) return;
+                    ticking = true;
+                    window.requestAnimationFrame(function() {
+                        var y = window.scrollY || window.pageYOffset;
+                        var vh = window.innerHeight;
+                        if (y < vh * 1.2) {
+                            var translate = y * intensity;
+                            var opacity = Math.max(0, 1 - (y / (vh * 0.85)));
+                            hero.style.transform = 'translate3d(0,' + translate + 'px,0)';
+                            hero.style.opacity = opacity.toFixed(3);
+                        }
+                        ticking = false;
+                    });
+                };
+                window.addEventListener('scroll', onScroll, { passive: true });
+                onScroll();
+            }
+        })();
+    </script>
 </body>
 </html>

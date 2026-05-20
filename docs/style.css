@@ -7,6 +7,7 @@
     --terracotta: #C75D4E;
     --accent-warm: #C29856;
     --hairline: rgba(42, 31, 20, 0.08);
+    --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 * {
@@ -20,6 +21,7 @@ html {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -27,6 +29,25 @@ body {
     background: var(--cream);
     color: var(--warm-ink);
     line-height: 1.55;
+    overflow-x: hidden;
+}
+
+/* Atmospheric body wash — barely-there warm gradient that shifts down the page */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(1100px 700px at 50% -10%, rgba(199, 93, 78, 0.10), transparent 60%),
+        radial-gradient(900px 600px at 90% 30%, rgba(194, 152, 86, 0.08), transparent 65%),
+        radial-gradient(800px 800px at 10% 70%, rgba(199, 93, 78, 0.05), transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+main, section, footer {
+    position: relative;
+    z-index: 1;
 }
 
 .container {
@@ -35,45 +56,77 @@ body {
     padding: 0 24px;
 }
 
+/* Reveal-on-scroll base. JS adds .in-view. */
+.reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 900ms var(--ease-expo), transform 900ms var(--ease-expo);
+    will-change: opacity, transform;
+}
+.reveal.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 80ms; }
+.reveal-delay-2 { transition-delay: 160ms; }
+.reveal-delay-3 { transition-delay: 240ms; }
+.reveal-delay-4 { transition-delay: 320ms; }
+
 /* Hero */
 .hero {
-    padding: 96px 0 80px;
+    padding: 120px 0 120px;
     text-align: center;
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero .container {
+    width: 100%;
+}
+
+.hero-inner {
+    /* parallax target — JS translates this on scroll */
+    will-change: transform, opacity;
 }
 
 .echo-mark {
     font-style: italic;
     font-weight: 400;
-    font-size: 144px;
+    font-size: clamp(160px, 22vw, 240px);
     line-height: 0.9;
     color: var(--warm-ink);
     margin-bottom: 12px;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
 }
 
 .wordmark {
     font-style: italic;
     font-weight: 400;
-    font-size: 56px;
+    font-size: clamp(48px, 6vw, 72px);
     line-height: 1;
     color: var(--warm-ink);
-    margin-bottom: 40px;
+    margin-bottom: 48px;
+    letter-spacing: -0.01em;
 }
 
 .tagline {
-    font-size: 24px;
-    line-height: 1.35;
+    font-style: italic;
+    font-size: clamp(26px, 3.2vw, 36px);
+    line-height: 1.25;
     color: var(--warm-ink);
-    margin-bottom: 18px;
+    margin-bottom: 22px;
     font-weight: 400;
+    letter-spacing: -0.005em;
 }
 
 .subtitle {
     font-size: 17px;
-    line-height: 1.6;
+    line-height: 1.65;
     color: var(--warm-ink-soft);
-    max-width: 520px;
-    margin: 0 auto 40px;
+    max-width: 560px;
+    margin: 0 auto 44px;
 }
 
 .cta-row {
@@ -91,13 +144,14 @@ body {
     font-size: 15px;
     font-weight: 600;
     text-decoration: none;
-    transition: transform 0.2s ease, opacity 0.2s ease;
+    transition: transform 600ms var(--ease-expo), opacity 600ms var(--ease-expo), box-shadow 600ms var(--ease-expo);
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
 }
 
 .cta-primary {
     background: var(--warm-ink);
     color: var(--cream);
+    box-shadow: 0 12px 24px -16px rgba(42, 31, 20, 0.5);
 }
 
 .cta-secondary {
@@ -108,13 +162,14 @@ body {
 
 .cta-primary:hover,
 .cta-secondary:hover {
-    transform: translateY(-1px);
-    opacity: 0.95;
+    transform: translateY(-2px);
+    opacity: 0.96;
+    box-shadow: 0 16px 32px -16px rgba(42, 31, 20, 0.45);
 }
 
 /* Demo video */
 .demo-section {
-    padding: 56px 0 40px;
+    padding: 80px 0 64px;
     border-top: 0.5px solid var(--hairline);
     text-align: center;
 }
@@ -124,11 +179,11 @@ body {
     max-width: clamp(280px, 60vw, 380px);
     aspect-ratio: 1290 / 2796;
     border-radius: 26px;
-    box-shadow: 0 30px 80px -30px rgba(199, 93, 78, 0.32),
-                0 12px 28px -10px rgba(42, 31, 20, 0.18);
+    box-shadow: 0 40px 100px -30px rgba(199, 93, 78, 0.35),
+                0 18px 36px -12px rgba(42, 31, 20, 0.22);
     background: var(--surface);
     display: block;
-    margin: 0 auto 20px;
+    margin: 0 auto 24px;
 }
 
 .demo-lang {
@@ -151,7 +206,7 @@ body {
     border-radius: 999px;
     cursor: pointer;
     font: inherit;
-    transition: background 0.15s, color 0.15s;
+    transition: background 0.25s var(--ease-expo), color 0.25s var(--ease-expo);
 }
 
 .demo-lang button[aria-pressed="true"] {
@@ -161,17 +216,18 @@ body {
 
 /* How it works */
 .how {
-    padding: 80px 0;
+    padding: 112px 0;
     border-top: 0.5px solid var(--hairline);
 }
 
 .how h2 {
     font-style: italic;
     font-weight: 500;
-    font-size: 40px;
+    font-size: clamp(34px, 4.4vw, 48px);
     line-height: 1.1;
     color: var(--warm-ink);
-    margin-bottom: 48px;
+    margin-bottom: 56px;
+    letter-spacing: -0.01em;
 }
 
 .how-steps {
@@ -191,7 +247,13 @@ body {
     background: var(--surface);
     border: 0.5px solid var(--hairline);
     border-radius: 18px;
-    padding: 24px;
+    padding: 28px 24px;
+    transition: transform 700ms var(--ease-expo), box-shadow 700ms var(--ease-expo);
+}
+
+.how-step:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 24px 48px -28px rgba(42, 31, 20, 0.18);
 }
 
 .how-num {
@@ -227,22 +289,23 @@ body {
 
 /* FAQ */
 .faq {
-    padding: 80px 0;
+    padding: 112px 0;
     border-top: 0.5px solid var(--hairline);
 }
 
 .faq h2 {
     font-style: italic;
     font-weight: 500;
-    font-size: 36px;
+    font-size: clamp(32px, 4vw, 44px);
     line-height: 1.1;
     color: var(--warm-ink);
     margin-bottom: 36px;
+    letter-spacing: -0.01em;
 }
 
 .faq details {
     border-bottom: 0.5px solid var(--hairline);
-    padding: 18px 0;
+    padding: 20px 0;
 }
 
 .faq details:first-of-type {
@@ -268,7 +331,7 @@ body {
     color: var(--terracotta);
     font-size: 22px;
     font-weight: 400;
-    transition: transform 0.2s ease;
+    transition: transform 0.3s var(--ease-expo);
     flex-shrink: 0;
 }
 
@@ -283,40 +346,41 @@ body {
     line-height: 1.65;
 }
 
-/* Features */
+/* Features overview */
 .features {
-    padding: 80px 0;
+    padding: 112px 0;
     border-top: 0.5px solid var(--hairline);
 }
 
 .features h2 {
     font-style: italic;
     font-weight: 500;
-    font-size: 40px;
+    font-size: clamp(34px, 4.4vw, 48px);
     line-height: 1.1;
     color: var(--warm-ink);
     margin-bottom: 16px;
     text-align: left;
+    letter-spacing: -0.01em;
 }
 
 .features-lede {
     font-size: 17px;
-    line-height: 1.6;
+    line-height: 1.65;
     color: var(--warm-ink-soft);
-    max-width: 520px;
-    margin-bottom: 48px;
+    max-width: 560px;
+    margin-bottom: 56px;
 }
 
 .feature-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 36px;
+    gap: 40px;
 }
 
 @media (min-width: 720px) {
     .feature-grid {
         grid-template-columns: 1fr 1fr;
-        gap: 48px 36px;
+        gap: 56px 44px;
     }
 }
 
@@ -324,15 +388,15 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
     font-size: 11px;
     font-weight: 600;
-    letter-spacing: 1.6px;
+    letter-spacing: 1.8px;
     color: var(--warm-ink-faint);
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .feature h3 {
     font-style: italic;
     font-weight: 500;
-    font-size: 22px;
+    font-size: 23px;
     line-height: 1.3;
     color: var(--warm-ink);
     margin-bottom: 10px;
@@ -341,26 +405,32 @@ body {
 .feature p {
     font-size: 15px;
     color: var(--warm-ink-soft);
-    line-height: 1.6;
+    line-height: 1.65;
 }
 
-/* Per-feature deep-dive sections */
+/* Per-feature deep-dive sections — cinematic, sticky phone shots */
 .feature-dive {
-    padding: 72px 0;
+    /* wider than the rest so the phone has room to breathe at desktop */
+    padding: 120px 0;
     border-top: 0.5px solid var(--hairline);
+    position: relative;
 }
 
 .feature-dive .container {
+    max-width: 1100px;
     display: grid;
     grid-template-columns: 1fr;
-    gap: 36px;
-    align-items: center;
+    gap: 40px;
+    align-items: start;
 }
 
-@media (min-width: 720px) {
+@media (min-width: 860px) {
+    .feature-dive {
+        padding: 160px 0;
+    }
     .feature-dive .container {
         grid-template-columns: 1fr 1fr;
-        gap: 56px;
+        gap: 80px;
     }
     .feature-dive.reverse .feature-dive-text {
         order: 2;
@@ -370,54 +440,59 @@ body {
     }
 }
 
+.feature-dive-text {
+    /* keeps text in the natural flow so it scrolls past the sticky phone */
+    padding-top: 4vh;
+}
+
 .feature-dive-eyebrow {
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
     font-size: 11px;
     font-weight: 600;
-    letter-spacing: 1.6px;
+    letter-spacing: 2px;
     color: var(--terracotta);
-    margin-bottom: 14px;
+    margin-bottom: 18px;
 }
 
 .feature-dive h2 {
     font-style: italic;
     font-weight: 500;
-    font-size: 34px;
-    line-height: 1.15;
+    font-size: clamp(34px, 4.6vw, 56px);
+    line-height: 1.08;
     color: var(--warm-ink);
-    margin-bottom: 18px;
-    letter-spacing: -0.005em;
+    margin-bottom: 24px;
+    letter-spacing: -0.012em;
 }
 
 .feature-dive p {
-    font-size: 16px;
-    line-height: 1.65;
+    font-size: 17px;
+    line-height: 1.7;
     color: var(--warm-ink-soft);
-    margin-bottom: 14px;
+    margin-bottom: 16px;
 }
 
 .feature-dive ul {
     list-style: none;
     padding: 0;
-    margin: 18px 0 0;
+    margin: 26px 0 0;
 }
 
 .feature-dive ul li {
-    font-size: 15px;
-    line-height: 1.55;
+    font-size: 15.5px;
+    line-height: 1.6;
     color: var(--warm-ink-soft);
-    padding-left: 18px;
+    padding-left: 22px;
     position: relative;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .feature-dive ul li::before {
     content: "·";
     color: var(--terracotta);
     position: absolute;
-    left: 4px;
-    top: -2px;
-    font-size: 22px;
+    left: 6px;
+    top: -3px;
+    font-size: 24px;
     font-weight: 700;
     line-height: 1;
 }
@@ -425,27 +500,53 @@ body {
 .feature-dive-shot {
     display: flex;
     justify-content: center;
+    position: relative;
+}
+
+/* Sticky-pinned phone on desktop — the marquee cinematic move */
+@media (min-width: 860px) and (prefers-reduced-motion: no-preference) {
+    .feature-dive-shot {
+        position: sticky;
+        top: 8vh;
+    }
 }
 
 .feature-dive-shot img {
     width: 100%;
-    max-width: clamp(240px, 70%, 320px);
+    max-width: clamp(260px, 36vw, 360px);
     aspect-ratio: 1290 / 2616;
     object-fit: cover;
-    border-radius: 26px;
-    box-shadow: 0 30px 80px -30px rgba(199, 93, 78, 0.28),
-                0 12px 28px -10px rgba(42, 31, 20, 0.18);
+    border-radius: 32px;
+    box-shadow:
+        0 50px 120px -40px rgba(199, 93, 78, 0.34),
+        0 24px 48px -16px rgba(42, 31, 20, 0.22),
+        0 1px 0 rgba(255, 255, 255, 0.5) inset;
     background: var(--surface);
     display: block;
+    position: relative;
+    z-index: 1;
 }
 
-@media (min-width: 720px) {
-    .feature-dive-shot img {
-        max-width: 300px;
-    }
+/* Warm halo behind each phone screenshot */
+.feature-dive-shot::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 90%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(closest-side, rgba(199, 93, 78, 0.16), rgba(199, 93, 78, 0) 70%);
+    z-index: 0;
+    pointer-events: none;
+    filter: blur(4px);
 }
 
-/* Section intro divider (for the features overview) */
+/* Section-to-section tint variation — barely perceptible */
+.feature-dive:nth-of-type(odd) { background: linear-gradient(180deg, rgba(199, 93, 78, 0.02), transparent 50%); }
+.feature-dive:nth-of-type(even) { background: linear-gradient(180deg, rgba(194, 152, 86, 0.025), transparent 50%); }
+
+/* Section intro divider (kept for compatibility) */
 .section-divider {
     text-align: center;
     padding: 60px 0 0;
@@ -474,33 +575,34 @@ body {
 
 /* Privacy section */
 .privacy {
-    padding: 80px 0;
+    padding: 112px 0;
     border-top: 0.5px solid var(--hairline);
 }
 
 .privacy .feature-eyebrow {
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 }
 
 .privacy h2 {
     font-style: italic;
     font-weight: 500;
-    font-size: 32px;
-    line-height: 1.2;
+    font-size: clamp(32px, 4vw, 42px);
+    line-height: 1.15;
     color: var(--warm-ink);
-    margin-bottom: 20px;
+    margin-bottom: 22px;
+    letter-spacing: -0.01em;
 }
 
 .privacy p {
-    font-size: 16px;
-    line-height: 1.65;
+    font-size: 17px;
+    line-height: 1.7;
     color: var(--warm-ink-soft);
     margin-bottom: 16px;
 }
 
 .privacy .aside {
     font-size: 13px;
-    margin-top: 24px;
+    margin-top: 28px;
 }
 
 .privacy a {
@@ -515,7 +617,7 @@ body {
 
 /* Footer */
 footer {
-    padding: 40px 0 60px;
+    padding: 56px 0 72px;
     border-top: 0.5px solid var(--hairline);
     text-align: center;
 }
@@ -624,4 +726,21 @@ footer a:hover {
 
 .doc-page .tldr ul {
     margin-bottom: 0;
+}
+
+/* Honor reduced-motion: kill parallax + reveal animations entirely */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+    .hero-inner {
+        transform: none !important;
+        opacity: 1 !important;
+    }
+    .feature-dive-shot {
+        position: static !important;
+    }
 }
