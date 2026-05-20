@@ -214,7 +214,7 @@
     </section>
 
     <section class="how">
-        <div class="container">
+        <div class="container container-narrow">
             <h2 class="reveal">Two taps. Then forget it's running.</h2>
             <div class="how-steps">
                 <div class="how-step reveal">
@@ -237,7 +237,7 @@
     </section>
 
     <section class="privacy">
-        <div class="container">
+        <div class="container container-narrow">
             <div class="feature-eyebrow reveal">PRIVACY BY DESIGN</div>
             <h2 class="reveal reveal-delay-1">Your meetings stay yours.</h2>
             <p class="reveal reveal-delay-2">Echo has no server. No account. No analytics. No third-party trackers. Audio recordings live in your iPhone's local storage. Transcripts stored in SwiftData on your device. AI features are opt-in — when you add your own API key, only the transcript text is sent, never the recording.</p>
@@ -246,7 +246,7 @@
     </section>
 
     <section class="faq">
-        <div class="container">
+        <div class="container container-narrow">
             <h2 class="reveal">Questions</h2>
             <details>
                 <summary>Is Echo free?</summary>
@@ -312,6 +312,7 @@
             }
 
             // Reveal-on-scroll
+            var revealEls = document.querySelectorAll('.reveal');
             if ('IntersectionObserver' in window) {
                 var io = new IntersectionObserver(function(entries) {
                     entries.forEach(function(entry) {
@@ -320,11 +321,29 @@
                             io.unobserve(entry.target);
                         }
                     });
-                }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
-                document.querySelectorAll('.reveal').forEach(function(el) { io.observe(el); });
+                }, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });
+                revealEls.forEach(function(el) { io.observe(el); });
             } else {
-                document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('in-view'); });
+                revealEls.forEach(function(el) { el.classList.add('in-view'); });
             }
+
+            // Safety net: force-reveal anything still hidden after 1.8s
+            // (handles cases where IO never fires — e.g. sections already past threshold on load)
+            setTimeout(function() {
+                document.querySelectorAll('.reveal:not(.in-view)').forEach(function(el) {
+                    var rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight * 1.1) {
+                        el.classList.add('in-view');
+                    }
+                });
+            }, 1800);
+
+            // Final safety: after 4s, reveal everything regardless
+            setTimeout(function() {
+                document.querySelectorAll('.reveal:not(.in-view)').forEach(function(el) {
+                    el.classList.add('in-view');
+                });
+            }, 4000);
 
             // Hero parallax (desktop only, gentle)
             var hero = document.querySelector('.hero-inner');
