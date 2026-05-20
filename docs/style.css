@@ -770,8 +770,8 @@ main, section, footer {
     .mosaic-grid .tile:nth-child(5) { grid-column: 2 / span 1; }
 
     /* 2-tile variant — larger, paired side by side */
-    .mosaic-grid-2 {
-        grid-template-columns: 1fr 1fr !important;
+    .mosaic-grid.mosaic-grid-2 {
+        grid-template-columns: 1fr 1fr;
         gap: 40px;
         max-width: 920px;
         margin: 0 auto;
@@ -780,23 +780,32 @@ main, section, footer {
     .mosaic-grid-2 .tile-thumb { aspect-ratio: 16 / 10; margin: -28px -28px 22px; }
     .mosaic-grid-2 .tile-title { font-size: 22px; }
     .mosaic-grid-2 .tile-body { font-size: 15.5px; }
+}
 
-    /* 4-tile variant — Library 2x2 */
-    .mosaic-grid-4 {
-        grid-template-columns: 1fr 1fr !important;
+/* 4-tile variant — Library 2x2. Outside the @media so it overrides at every size. */
+.mosaic-grid.mosaic-grid-4 {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    max-width: 1040px;
+    margin: 0 auto;
+}
+@media (min-width: 720px) {
+    .mosaic-grid.mosaic-grid-4 {
+        grid-template-columns: 1fr 1fr;
         gap: 32px;
-        max-width: 1000px;
-        margin: 0 auto;
     }
-    .mosaic-grid-4 .tile { padding: 26px 26px 30px; }
-    .mosaic-grid-4 .tile-thumb { aspect-ratio: 16 / 11; margin: -26px -26px 20px; }
-    .mosaic-grid-4 .tile-title { font-size: 21px; }
-    .mosaic-grid-4 .tile-body { font-size: 15px; }
 }
-
-@media (max-width: 719px) {
-    .mosaic-grid-4 { gap: 22px; }
+.mosaic-grid-4 .tile { padding: 26px 26px 30px; }
+.mosaic-grid-4 .tile:nth-child(n) { grid-column: auto; }
+.mosaic-grid-4 .tile-thumb {
+    aspect-ratio: 4 / 3;
+    margin: -26px -26px 20px;
 }
+.mosaic-grid-4 .tile-thumb img {
+    object-position: center 20%;
+}
+.mosaic-grid-4 .tile-title { font-size: 22px; }
+.mosaic-grid-4 .tile-body { font-size: 15.5px; }
 
 .tile {
     background: var(--surface);
