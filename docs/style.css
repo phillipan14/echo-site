@@ -433,7 +433,7 @@ main, section, footer {
 }
 
 .stage-bleed-grid {
-    max-width: 1280px;
+    max-width: 1380px;
     margin: 0 auto;
     padding: 0 24px;
     display: grid;
@@ -459,21 +459,21 @@ main, section, footer {
 
 @media (min-width: 860px) {
     .stage-bleed-grid {
-        grid-template-columns: 1.15fr 1fr;
+        grid-template-columns: 1.25fr 1fr;
         gap: 72px;
-        /* Inner padding aligned with main container (1100px) so headlines don't crowd */
-        padding-left: max(48px, calc((100vw - 1180px) / 2));
+        padding-left: max(40px, calc((100vw - 1380px) / 2 + 40px));
         padding-right: 24px;
     }
     .stage-bleed-shot {
-        margin-right: -8%; /* gentler clip — keep most of the phone visible */
+        margin-right: -6%; /* small clip, keeps phone readable */
     }
     .stage-bleed-shot img {
-        max-width: 460px;
+        max-width: 440px;
     }
-    /* Headlines in side-by-side bleed sections are tighter than full-bleed centered ones */
+    /* Headlines in side-by-side bleed sections — calibrated so intended <br> lines fit on one row */
     .stage-bleed .stage-headline {
-        font-size: clamp(40px, 5.4vw, 76px);
+        font-size: clamp(38px, 4.6vw, 64px);
+        margin-bottom: 28px;
     }
 }
 
@@ -588,19 +588,19 @@ main, section, footer {
 /* Bleed-reverse: phone on the LEFT, text on the RIGHT (mirrors stage-bleed) */
 @media (min-width: 860px) {
     .stage-bleed-reverse .stage-bleed-grid {
-        grid-template-columns: 1fr 1.15fr;
+        grid-template-columns: 1fr 1.25fr;
         padding-left: 24px;
-        padding-right: max(48px, calc((100vw - 1180px) / 2));
+        padding-right: max(40px, calc((100vw - 1380px) / 2 + 40px));
     }
     .stage-bleed-reverse .stage-bleed-shot {
         order: -1;
         margin-right: 0;
-        margin-left: -8%;
+        margin-left: -6%;
         justify-content: flex-start;
     }
     .stage-bleed-reverse .stage-bleed-text {
         padding-right: 0;
-        padding-left: 32px;
+        padding-left: 24px;
     }
     .stage-bleed-reverse .stage-bleed-shot::before {
         left: auto;
@@ -636,12 +636,14 @@ main, section, footer {
 
 @media (min-width: 860px) {
     .scrub-container {
-        grid-template-columns: 1.2fr 1fr;
+        grid-template-columns: 1.3fr 1fr;
         gap: 72px;
         padding: 120px 48px;
+        max-width: 1300px;
     }
     .stage-scrub .stage-headline {
-        font-size: clamp(40px, 5.4vw, 76px);
+        font-size: clamp(38px, 4.6vw, 64px);
+        margin-bottom: 28px;
     }
 }
 
